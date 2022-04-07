@@ -9,7 +9,7 @@ src_backup_dir = '/redmine'
 dst_backup = '/backup'
 
 try:
-    shutil.copy(src_backup_dir,dst_backup)
+    shutil.copytree(src_backup_dir,dst_backup)
     print("File copied succesfully")
 
 except shutil.SameFileError:
