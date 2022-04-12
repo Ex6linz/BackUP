@@ -15,10 +15,7 @@ try:
     date_format = today.strftime("%d_%b_%y_")
     dst_backup_dir = dst_backup_dir + date_format
     mysql_file_name = mysql_file + date_format + ".sql"
-    mysql_backup = os.system("cd" + dst_backup_dir + " && " + "mysqldump - u "
-                             + mysql_user + " p "+ mysql_password + "'--databases redmine_db > '" 
-                             + mysql_file_name
-                             )
+    mysql_backup = os.system("cd %s && mysql - u %s -p %s --databases redmine_db %s").format(dst_backup_dir,mysql_user,mysql_password,mysql_file_name) 
     shutil.copytree(src_back_dir, dst_backup_dir)
     shutil.copy(mysql_file_name,dst_backup_dir)
     print("File copied succesfully")
