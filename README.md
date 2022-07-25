@@ -5,3 +5,6 @@ Other requests like file transfer against scp on servers etc can be easily imple
 
 The program was executed using the Python language
 The libraries used are: sys, os, time 
+
+Use tech:
+python3
